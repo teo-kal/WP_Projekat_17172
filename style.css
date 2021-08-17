@@ -1,0 +1,214 @@
+body
+{
+    margin: 0;
+    background-color: lightblue;
+    display: flex;
+    flex-direction: column;
+}
+
+/*MENU****************************************************/
+
+.menu
+{
+    display: flex;
+
+    background-color: lightblue;
+    padding: 3px;
+}
+
+.menu li
+{
+    display: inline;
+    padding: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: black;
+}
+
+.menu li:hover
+{
+    background-color: cornflowerblue;
+}
+
+.menu a
+{
+    text-decoration: none;
+}
+
+.menu li:hover
+{
+    color: white;
+}
+
+/*MENU END****************************************************/
+
+.required:after 
+{
+    content:" *";
+    color: red;
+}
+
+input[type=number] 
+{
+    -moz-appearance: textfield;
+}
+
+.kontejner
+{
+    display: flex;
+    border:  1px solid black;
+    margin: 10px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.kontForma
+{
+    display: flex;
+    flex-direction: column;
+    flex-basis: 200px;
+    
+    padding: 10px;
+}
+
+.dugme
+{
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+.kontTermini
+{
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+}
+
+.red
+{
+    display: flex;
+    flex-grow: 1;
+}
+
+.kontVeterinari
+{
+    display: flex;
+    flex-direction: column;
+    flex-basis: 300px;
+    flex-shrink: 1;
+    flex-grow: 0;
+}
+
+.kontVeterinar
+{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border:  1px solid black;
+    margin: 10px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.slikaVet
+{
+    width: 90px;
+    height: 90px;
+    padding: 5px;
+    align-self: center;
+}
+
+.termin
+{
+    border: 1px solid black;
+    
+    flex: 1 1 10px;
+    
+    margin: 5px;
+
+    text-align: center;
+
+    font-size: 18px;
+}
+
+.terminLabela
+{
+    margin: 0 auto;
+    height: 100px;
+}
+
+.naslov
+{
+    padding: 30px;
+    text-align: center;
+}
+
+.kontRegistracija
+{
+    display: flex;
+    flex-direction: column;
+
+    width: 300px;
+    padding: 10px;
+}
+
+.veciKontejner
+{
+    width: 500px;
+}
+
+.divSviRb
+{
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    margin: 10px 0px;
+   
+    display: flex;
+    flex-direction: column;
+   
+    padding: 10px 0px; 
+    width: 200px;
+    border-radius: 10px;
+
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.tbx
+{
+    flex: 0, 1, 100px;
+    width: 200px;
+}
+
+.vetSpan
+{
+    font-weight: bold;
+}
+
+.ljubimacInfo
+{
+    display: flex;
+    flex-direction: row;
+    border: solid 1px rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    margin: 10px 0px;
+    background-color: rgba(100, 100, 100, 0.2);
+}
+
+.ljubimacInfoSmol
+{
+    padding: 10px 10px; 
+    margin: 10px 0px;
+}
+
+.dugmici
+{
+    margin: 0px 5px;
+    padding: 10px;
+}
+
+.dugme
+{
+    float: right;
+}
