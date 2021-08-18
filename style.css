@@ -4,6 +4,8 @@ body
     background-color: lightblue;
     display: flex;
     flex-direction: column;
+    min-width: 810px;
+    flex-shrink: 0;
 }
 
 /*MENU****************************************************/
@@ -62,6 +64,16 @@ input[type=number]
     background-color: white;
     border-radius: 10px;
     padding: 5px;
+
+
+}
+
+.pomKlasa
+{
+    display: flex;
+
+    flex-basis: 700px;
+    flex-shrink: 0;
 }
 
 .kontForma
@@ -153,11 +165,14 @@ input[type=number]
 
     width: 300px;
     padding: 10px;
+    flex-shrink: 1;
 }
 
 .veciKontejner
 {
     width: 500px;
+    display: flex;
+    flex-shrink: 1;
 }
 
 .divSviRb
@@ -212,3 +227,12 @@ input[type=number]
 {
     float: right;
 }
+
+@media screen and (max-width: 900px) 
+{
+    .kontLjubimci 
+    {
+        display: flex;
+        flex-direction: column;
+    }
+  }

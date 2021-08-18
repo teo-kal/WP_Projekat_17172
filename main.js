@@ -7,6 +7,8 @@ import {Veterinar} from "./veterinar.js"
     const kontZaLjubimce = document.createElement("div");
     kontZaLjubimce.classList = "kontLjubimci";
     kontZaLjubimce.classList.add("kontejner");
+    kontZaLjubimce.classList.add("pomKlasa");
+
     kontZaLjubimce.id = "zaLjubimce";
 
     document.body.appendChild(kontZaLjubimce);
@@ -22,11 +24,16 @@ import {Veterinar} from "./veterinar.js"
         let tb = document.createElement("input");
         tb.className = "tbx";
         tb.classList.add("jmbg" + strana);
-        tb.type = "number";
+        tb.type = "text";
         if(ljubimac != null)
             tb.value = ljubimac.JmbgVlasnika;
         tb.maxLength = 13;
         tb.minLength = 13;
+
+        tb.onkeypress=(ev => onlyNumberKey(ev));
+
+        tb.max = 9999999999999;
+        tb.min = 1111111111111;
         host.appendChild(tb);
 
         //Ime ljubimca:
@@ -194,6 +201,13 @@ import {Veterinar} from "./veterinar.js"
                 return;
             }
 
+            /*if(jmbg > 9999999999999 || jmbg <= 1111111111111)
+            {
+                alert("Mora bude 13 cifara u jmbg!");
+
+                return;
+            }*/
+
             fetch("https://localhost:5001/Ljubimac/UpisiLjubimca", 
             {
                 method: "POST",
@@ -228,6 +242,15 @@ import {Veterinar} from "./veterinar.js"
                     alert("Greška prilikom upisa.");
             });       
         }
+    }
+
+    function onlyNumberKey(evt) {
+          
+        // Only ASCII character in that range allowed
+        var ASCIICode = (evt.which) ? evt.which : evt.keyCode
+        if (ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57))
+            return false;
+        return true;
     }
 
     function crtajDugmice(host, ljubimac)
