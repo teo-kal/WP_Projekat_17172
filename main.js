@@ -29,11 +29,7 @@ import {Veterinar} from "./veterinar.js"
             tb.value = ljubimac.JmbgVlasnika;
         tb.maxLength = 13;
         tb.minLength = 13;
-
         tb.onkeypress=(ev => onlyNumberKey(ev));
-
-        tb.max = 9999999999999;
-        tb.min = 1111111111111;
         host.appendChild(tb);
 
         //Ime ljubimca:
@@ -108,9 +104,12 @@ import {Veterinar} from "./veterinar.js"
         tb = document.createElement("input");
         tb.className = "tbx";
         tb.classList.add("brCipa" + strana);
-        tb.type = "number";
+        tb.type = "text";
         if(ljubimac != null)
             tb.value = ljubimac.BrojCipa;
+        tb.maxLength = 15;
+        tb.minLength = 15;
+        tb.onkeypress=(ev => onlyNumberKey(ev));
         host.appendChild(tb);
 
         //Pol:
@@ -244,8 +243,8 @@ import {Veterinar} from "./veterinar.js"
         }
     }
 
-    function onlyNumberKey(evt) {
-          
+    function onlyNumberKey(evt)  //nadjeno online
+    {
         // Only ASCII character in that range allowed
         var ASCIICode = (evt.which) ? evt.which : evt.keyCode
         if (ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57))
@@ -404,9 +403,10 @@ import {Veterinar} from "./veterinar.js"
         let tb = document.createElement("input");
         tb.className = "tbx";
         tb.classList.add("jmbg");
-        tb.type = "number";
+        tb.type = "text";
         tb.maxLength = 13;
         tb.minLength = 13;
+        tb.onkeypress=(ev => onlyNumberKey(ev));
         kontForma.appendChild(tb);
 
         //Dugme:

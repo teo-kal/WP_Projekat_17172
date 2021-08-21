@@ -112,7 +112,12 @@ export class Ambulanta
         
         let tb = document.createElement("input");
         tb.className = "jmbg";
-        tb.type = "number";
+        tb.classList.add("tbx");
+
+        tb.type = "text";
+        tb.maxLength = 13;
+        tb.minLength = 13;
+        tb.onkeypress=(ev => this.onlyNumberKey(ev));
         kontForma.appendChild(tb);
 
         //Ime ljubimca:
@@ -385,5 +390,14 @@ export class Ambulanta
             opcija.value = this.Veterinari[i].ID; 
             this.SelVet.appendChild(opcija);
         }
+    }
+
+    onlyNumberKey(evt)  //nadjeno online
+    {
+        // Only ASCII character in that range allowed
+        var ASCIICode = (evt.which) ? evt.which : evt.keyCode
+        if (ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57))
+            return false;
+        return true;
     }
 }
